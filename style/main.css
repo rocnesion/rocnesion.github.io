@@ -15,18 +15,14 @@
 }
 
 * {
-  @apply cursor-default;
+  cursor: none !important;
+
   scrollbar-width: thin;
   scrollbar-color: #26282c transparent;
 }
 
-html {
-  overflow-x: hidden;
-  overflow-y: overlay;
-}
-
 body {
-  @apply font-semi bg-base-08 text-sm leading-md text-base-96;
+  @apply font-semi bg-base-08 text-sm leading-md text-base-96 select-none;
 }
 
 .page-enter-active,
