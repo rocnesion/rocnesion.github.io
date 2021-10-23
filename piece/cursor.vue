@@ -11,18 +11,18 @@
 <script>
   export default {
     mounted() {
+      const cursor = this.$refs.cursor
+
       document.onmousemove = e => {
-        this.$refs.cursor.style.top = e.clientY - 4 + 'px'
-        this.$refs.cursor.style.left = e.clientX - 4 + 'px'
+        cursor.style.top = e.clientY - 4 + 'px'
+        cursor.style.left = e.clientX - 4 + 'px'
+
+        if (cursor.style.display == 'flex' || e.sourceCapabilities.firesTouchEvents) return
+
+        cursor.style.display = 'flex'
       }
 
-      document.onmouseleave = e => {
-        this.$refs.cursor.style.display = 'none'
-      }
-
-      document.onmouseenter = e => {
-        if (!e.sourceCapabilities.firesTouchEvents) this.$refs.cursor.style.display = 'flex'
-      }
+      document.onmouseleave = () => (cursor.style.display = 'none')
     }
   }
 </script>
