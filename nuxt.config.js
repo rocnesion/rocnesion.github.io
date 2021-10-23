@@ -1,7 +1,7 @@
 export default {
   target: 'static',
 
-  generate: { dir: '.dist' },
+  generate: { fallback: true, dir: '.dist' },
 
   buildModules: ['nuxt-windicss'],
 
