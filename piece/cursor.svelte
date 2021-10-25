@@ -49,6 +49,10 @@
     justify-content: center;
     border-radius: pre.rem(2);
     background-color: pre.con(base-64);
+
+    &.hide {
+      visibility: hidden;
+    }
   }
 
   .ripple {
@@ -62,19 +66,19 @@
       border: pre.rem(2) solid pre.con(base-64);
     }
 
-    &.ripple.action {
+    &.action {
       animation: action 0.4s linear;
       border: pre.rem(1) solid pre.con(base-64);
     }
+
+    &.hide {
+      animation: none;
+      visibility: hidden;
+    }
   }
 
-  .hide {
+  .cursor.hide > .ripple.motion {
     animation: none;
-    visibility: hidden;
-
-    > .ripple {
-      animation: none;
-    }
   }
 
   @keyframes motion {
