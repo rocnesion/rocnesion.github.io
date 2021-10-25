@@ -39,10 +39,6 @@
 </span>
 
 <style lang="scss" global>
-  .hide {
-    visibility: hidden;
-  }
-
   .cursor {
     display: flex;
     position: fixed;
@@ -60,16 +56,25 @@
     width: pre.rem(16);
     height: pre.rem(16);
     border-radius: pre.con(edge-rad);
+
+    &.motion {
+      animation: motion 1.4s infinite;
+      border: pre.rem(2) solid pre.con(base-64);
+    }
+
+    &.ripple.action {
+      animation: action 0.4s linear;
+      border: pre.rem(1) solid pre.con(base-64);
+    }
   }
 
-  .ripple.motion {
-    animation: motion 1.4s infinite;
-    border: pre.rem(2) solid pre.con(base-64);
-  }
+  .hide {
+    animation: none;
+    visibility: hidden;
 
-  .ripple.action {
-    animation: action 0.4s linear;
-    border: pre.rem(1) solid pre.con(base-64);
+    > .ripple {
+      animation: none;
+    }
   }
 
   @keyframes motion {
