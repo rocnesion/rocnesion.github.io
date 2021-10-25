@@ -1,4 +1,4 @@
-.nuxt
-.dist
+.svelte-kit
+.svelte-out
 
 node_modules

@@ -1,0 +1,40 @@
+@use 'pre';
+
+$variables: (
+  // Color
+  base-08: hsl(216 08% 08%),
+  base-16: hsl(216 08% 16%),
+  base-24: hsl(216 08% 24%),
+  base-32: hsl(216 08% 32%),
+  base-40: hsl(216 08% 40%),
+  base-48: hsl(216 08% 48%),
+  base-56: hsl(216 08% 56%),
+  base-64: hsl(216 08% 64%),
+  base-72: hsl(216 08% 72%),
+  base-80: hsl(216 08% 80%),
+  base-88: hsl(216 08% 88%),
+  base-96: hsl(216 08% 96%),
+  // Text
+  semi: 400,
+  bold: 800,
+  sans: 'sans, sans-serif',
+  //
+  xs: pre.rem(12),
+  sm: pre.rem(14),
+  md: pre.rem(18),
+  lg: pre.rem(24),
+  xl: pre.rem(32),
+  // Transition
+  time: 0.2s,
+  func: cubic-bezier(0.4, 0, 0.2, 1),
+  // Edge
+  edge-rad: pre.rem(4),
+  edge-size: pre.rem(1),
+  edge-color: pre.con(base-24)
+);
+
+:root {
+  @each $name, $value in $variables {
+    --#{$name}: #{$value};
+  }
+}

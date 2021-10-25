@@ -1,13 +1,16 @@
 {
+  "type": "module",
   "scripts": {
-    "dev": "nuxt dev",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
-  },
-  "dependencies": {
-    "nuxt": "^2.15.8"
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview"
   },
   "devDependencies": {
-    "nuxt-windicss": "^2.0.5"
+    "@sveltejs/adapter-static": "next",
+    "@sveltejs/kit": "next",
+    "sass": "^1.43.3",
+    "svelte": "^3.44.0",
+    "svelte-preprocess": "^4.9.8",
+    "typescript": "^4.4.4"
   }
 }
