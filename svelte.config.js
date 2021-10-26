@@ -11,7 +11,7 @@ export default {
   }),
 
   kit: {
-    adapter: adapter({ pages: '.svelte-out', assets: '.svelte-out' }),
+    adapter: adapter({ pages: '.svelte-out', assets: '.svelte-out', fallback: '404.html' }),
 
     files: { routes: 'route', assets: 'static', template: 'app.html' },
 
