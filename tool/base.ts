@@ -6,9 +6,11 @@ export const timeout = (callback: () => void, time: number) => {
 }
 
 export const istouch = (event: any) => {
-  if (event.sourceCapabilities.firesTouchEvents) return true
-
-  return false
+  if (event.sourceCapabilities && event.sourceCapabilities.firesTouchEvents) {
+    return true
+  } else {
+    return false
+  }
 }
 
 export const tool = { timeout, istouch }

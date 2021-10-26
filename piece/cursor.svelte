@@ -6,8 +6,16 @@
   let motion: HTMLSpanElement
 
   onMount(() => {
-    document.onmouseleave = () => {
+    document.onmouseout = event => {
+      if (tool.istouch(event)) return
+
       cursor.classList.add('hide')
+    }
+
+    document.onmouseover = event => {
+      if (tool.istouch(event)) return
+
+      cursor.classList.remove('hide')
     }
 
     document.onmousemove = event => {
@@ -15,15 +23,12 @@
 
       cursor.style.top = event.clientY - 4 + 'px'
       cursor.style.left = event.clientX - 4 + 'px'
-
-      cursor.classList.remove('hide')
     }
 
     document.onclick = event => {
       if (tool.istouch(event)) return
 
       motion.classList.add('hide')
-      cursor.classList.remove('hide')
       tool.timeout(() => motion.classList.remove('hide'), 600)
 
       const action = document.createElement('span')
