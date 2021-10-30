@@ -1,1 +1,0 @@
-.title{letter-spacing:.4em;font-size:var(--md);color:var(--base-64);padding-top:4rem;font-weight:var(--bold);padding-bottom:1rem}.button{border-radius:var(--edge-rad);display:flex;align-items:center;justify-content:center;background-color:var(--base-16);width:100%;padding:1rem 2rem;transition:background-color var(--time) var(--func)}.button:hover{background-color:var(--base-24)}
