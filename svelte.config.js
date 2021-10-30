@@ -3,27 +3,24 @@ import process from 'svelte-preprocess'
 import path from 'path'
 
 export default {
-  preprocess: process({
-    scss: {
-      prependData: `@use 'pre';`,
-      includePaths: [path.resolve('style')]
-    }
-  }),
+  preprocess: process(),
 
   kit: {
-    adapter: adapter({ pages: '.svelte-out', assets: '.svelte-out', fallback: '404.html' }),
+    adapter: adapter({
+      fallback: '404.html',
+      pages: '.svelte-out',
+      assets: '.svelte-out'
+    }),
 
-    files: { routes: 'route', assets: 'static', template: 'app.html' },
+    files: {
+      routes: 'source/route',
+      assets: 'source/static',
+      template: 'source/app.html'
+    },
 
     vite: {
-      resolve: {
-        alias: {
-          '~/tool': path.resolve('tool'),
-          '~/asset': path.resolve('asset'),
-          '~/piece': path.resolve('piece'),
-          '~/style': path.resolve('style')
-        }
-      }
+      server: { fs: { strict: false } },
+      resolve: { alias: { '~': path.resolve('source') } }
     }
   }
 }

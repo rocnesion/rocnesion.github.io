@@ -1,35 +1,36 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import { tool } from '~/tool/base'
+  import { istouch } from '~/tool/istouch'
+  import { timeout } from '~/tool/timeout'
 
   let cursor: HTMLSpanElement
   let motion: HTMLSpanElement
 
   onMount(() => {
     document.onmouseout = event => {
-      if (tool.istouch(event)) return
+      if (istouch(event)) return
 
       cursor.classList.add('hide')
     }
 
     document.onmouseover = event => {
-      if (tool.istouch(event)) return
+      if (istouch(event)) return
 
       cursor.classList.remove('hide')
     }
 
     document.onmousemove = event => {
-      if (tool.istouch(event)) return
+      if (istouch(event)) return
 
       cursor.style.top = event.clientY - 4 + 'px'
       cursor.style.left = event.clientX - 4 + 'px'
     }
 
     document.onclick = event => {
-      if (tool.istouch(event)) return
+      if (istouch(event)) return
 
       motion.classList.add('hide')
-      tool.timeout(() => motion.classList.remove('hide'), 600)
+      timeout(() => motion.classList.remove('hide'), 600)
 
       const action = document.createElement('span')
       action.onanimationend = () => action.remove()
@@ -45,15 +46,18 @@
 
 <style lang="scss" global>
   .cursor {
+    z-index: 999;
     display: flex;
     position: fixed;
-    width: pre.rem(8);
-    height: pre.rem(8);
     align-items: center;
     pointer-events: none;
     justify-content: center;
-    border-radius: pre.rem(2);
-    background-color: pre.con(base-64);
+
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+
+    background-color: hsl(216 8% 64%);
 
     &.hide {
       visibility: hidden;
@@ -62,18 +66,19 @@
 
   .ripple {
     position: absolute;
-    width: pre.rem(16);
-    height: pre.rem(16);
-    border-radius: pre.con(edge-rad);
+
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
 
     &.motion {
       animation: motion 1.4s infinite;
-      border: pre.rem(2) solid pre.con(base-64);
+      border: 2px solid hsl(216 8% 64%);
     }
 
     &.action {
       animation: action 0.4s linear;
-      border: pre.rem(1) solid pre.con(base-64);
+      border: 1px solid hsl(216 8% 64%);
     }
 
     &.hide {

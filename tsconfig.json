@@ -1,21 +1,17 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "strict": true,
+
+    "lib": ["esnext", "dom"],
     "module": "esnext",
     "target": "esnext",
-    "lib": ["esnext", "dom"],
     "moduleResolution": "node",
 
-    "strict": true,
     "sourceMap": true,
     "importsNotUsedAsValues": "error",
 
-    "paths": {
-      "~/asset/*": ["./asset/*"],
-      "~/piece/*": ["./piece/*"],
-      "~/style/*": ["./style/*"],
-      "~/tool/*": ["./tool/*"]
-    }
+    "baseUrl": ".",
+    "paths": { "~/*": ["./source/*"] }
   },
 
   "include": ["**/*.ts", "**/*.svelte"],

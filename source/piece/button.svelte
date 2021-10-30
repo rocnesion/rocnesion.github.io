@@ -9,20 +9,19 @@
 
 <style lang="scss" global>
   .button {
-    border-radius: pre.con(edge-rad);
-
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: pre.con(base-16);
 
     width: 100%;
-    padding: pre.rem(16) pre.rem(32);
+    border-radius: 4px;
+    padding: 16px 32px;
 
-    transition: background-color pre.con(time) pre.con(func);
+    background-color: hsl(216 8% 16%);
+    transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .button:hover {
-    background-color: pre.con(base-24);
+    background-color: hsl(216 8% 24%);
   }
 </style>
