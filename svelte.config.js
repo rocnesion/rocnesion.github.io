@@ -15,7 +15,7 @@ export default {
     files: {
       routes: 'source/route',
       assets: 'source/static',
-      template: 'source/app.html'
+      template: 'source/over.html'
     },
 
     vite: {

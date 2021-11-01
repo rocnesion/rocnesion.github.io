@@ -7,6 +7,4 @@
 
 <Button external link="https://github.com/rocnesion">github</Button>
 
-<Button external link="https://codepen.io/rocnesion">codepen</Button>
-
 <Button external link="https://twitter.com/rocnesion">twitter</Button>

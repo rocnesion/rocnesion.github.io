@@ -1,19 +1,19 @@
 {
   "Svelte Script Block": {
     "scope": "svelte",
-    "prefix": "x.script",
+    "prefix": "script",
     "body": "<script lang=\"ts\">\n  $1\n</script>\n"
   },
 
   "Svelte Style Block": {
     "scope": "svelte",
-    "prefix": "x.style",
+    "prefix": "style",
     "body": "<style lang=\"scss\" global>\n  $1\n</style>\n"
   },
 
   "Typescript Import": {
     "scope": "typescript",
-    "prefix": "x.import",
+    "prefix": "import",
     "body": "import {$2} from '~/$1'"
   }
 }
